@@ -3,8 +3,9 @@
 #include <windows.h>
 int main(void)
 {
-    int flag = 1;
-    while(flag)
+    printf("Started\n");
+
+    while(1)
     {
         // time_t is a double data type.
         time_t today = time(NULL);                          // Number of secs since Epoch (July 1, 1970).
@@ -13,7 +14,7 @@ int main(void)
         if((local_time->tm_min == 24 || local_time->tm_min == 59) && local_time->tm_sec == 0)    // Since local_time is a pointer itself, and to access the tm_min struct we use ->.
         {
             printf("Alarmed on: %s", asctime(local_time));                                      // The purpose of asctime() function is to get all the data assigned to tm (a struct that assigns seconds into months, etc.)
-            for(int i = 0; i < 3; i++)
+            for(int i = 0; i < 10; i++)
             {
                 printf("%d\n", i);
                 MessageBeep(MB_ICONINFORMATION);            // Microsoft default beep.        
