@@ -4,7 +4,8 @@
 int main(void)
 {
     printf("Started\n");
-
+    MessageBeep(MB_ICONINFORMATION);
+    
     while(1)
     {
         // time_t is a double data type.
